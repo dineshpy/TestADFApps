@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.66.73" id="frag1PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="XxPoLineExcelUpload_VO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="XxPoLineExcelUpload_VO1Iterator"/>
+    <iterator Binds="XxPoSchExcelUpload_VO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="XxPoSchExcelUpload_VO1Iterator"/>
+    <iterator Binds="XxPoDistExcelUpload_VO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="XxPoDistExcelUpload_VO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="XxPoLineExcelUpload_VO1Iterator"
+          id="XxPoLineExcelUpload_VO1">
+      <nodeDefinition DefName="model.VO.XxPoLineExcelUpload_VO"
+                      Name="XxPoLineExcelUpload_VO10">
+        <AttrNames>
+          <Item Value="LineNumber"/>
+          <Item Value="ProjectNum"/>
+          <Item Value="TaskNum"/>
+          <Item Value="LineType"/>
+          <Item Value="ItemsNum"/>
+          <Item Value="RevNo"/>
+          <Item Value="Description"/>
+          <Item Value="Category"/>
+          <Item Value="Uom"/>
+          <Item Value="Quantity"/>
+          <Item Value="UnitPrice"/>
+          <Item Value="ProvisionType"/>
+          <Item Value="ProvisionAmount"/>
+          <Item Value="RefNo"/>
+          <Item Value="RowID"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="XxPoSchExcelUpload_VO1Iterator"
+          id="XxPoSchExcelUpload_VO1">
+      <nodeDefinition DefName="model.VO.XxPoSchExcelUpload_VO"
+                      Name="XxPoSchExcelUpload_VO10">
+        <AttrNames>
+          <Item Value="LineNumber"/>
+          <Item Value="ShipNumber"/>
+          <Item Value="ShipOrg"/>
+          <Item Value="Quantity"/>
+          <Item Value="Uom"/>
+          <Item Value="NeeByDate"/>
+          <Item Value="NoteToSupplier"/>
+          <Item Value="PromisedDate"/>
+          <Item Value="RefNo"/>
+          <Item Value="RowID"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="XxPoDistExcelUpload_VO1Iterator"
+          id="XxPoDistExcelUpload_VO1">
+      <nodeDefinition DefName="model.VO.XxPoDistExcelUpload_VO"
+                      Name="XxPoDistExcelUpload_VO10">
+        <AttrNames>
+          <Item Value="LineNumber"/>
+          <Item Value="ShipNumber"/>
+          <Item Value="DistNumber"/>
+          <Item Value="ProjectNum"/>
+          <Item Value="TaskNum"/>
+          <Item Value="CodeComb"/>
+          <Item Value="DistQty"/>
+          <Item Value="ExpenditureType"/>
+          <Item Value="ExpenditureOrganization"/>
+          <Item Value="ExpenditureDate"/>
+          <Item Value="RefNo"/>
+          <Item Value="RowID"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="XxPoLineExcelUpload_VO1Iterator" id="CreateInsert"
+            InstanceName="AppModuleDataControl.XxPoLineExcelUpload_VO1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="XxPoSchExcelUpload_VO1Iterator" id="CreateInsert1"
+            InstanceName="AppModuleDataControl.XxPoSchExcelUpload_VO1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="XxPoDistExcelUpload_VO1Iterator" id="CreateInsert2"
+            InstanceName="AppModuleDataControl.XxPoDistExcelUpload_VO1"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

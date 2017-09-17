@@ -1,0 +1,613 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelSplitter binding="#{backingBeanScope.backing_frag1.ps1}" id="ps1"
+                    orientation="vertical" splitterPosition="207">
+    <f:facet name="first">
+      <af:inputFile label="Excel"
+                    binding="#{backingBeanScope.backing_frag1.if1}" id="if1"
+                    autoSubmit="true"
+                    valueChangeListener="#{backingBeanScope.backing_frag1.onChangeUpload}"/>
+    </f:facet>
+    <f:facet name="second">
+      <af:panelTabbed position="above"
+                      binding="#{backingBeanScope.backing_frag1.pt1}" id="pt1">
+        <af:showDetailItem id="tab1" text="Line" disclosed="true"
+                           binding="#{backingBeanScope.backing_frag1.tab1}"
+                           styleClass="AFStretchWidth">
+          <af:table value="#{bindings.XxPoLineExcelUpload_VO1.collectionModel}"
+                    var="row"
+                    rows="#{bindings.XxPoLineExcelUpload_VO1.rangeSize}"
+                    emptyText="#{bindings.XxPoLineExcelUpload_VO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.XxPoLineExcelUpload_VO1.rangeSize}"
+                    rowBandingInterval="0"
+                    selectedRowKeys="#{bindings.XxPoLineExcelUpload_VO1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.XxPoLineExcelUpload_VO1.collectionModel.makeCurrent}"
+                    rowSelection="single"
+                    binding="#{backingBeanScope.backing_frag1.t1}" id="t1"
+                    styleClass="AFStretchWidth">
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.LineNumber.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.LineNumber.label}"
+                       id="c13">
+              <af:inputText value="#{row.bindings.LineNumber.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.LineNumber.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.LineNumber.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.LineNumber.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.LineNumber.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.LineNumber.tooltip}"
+                            id="it1">
+                <f:validator binding="#{row.bindings.LineNumber.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoLineExcelUpload_VO1.hints.LineNumber.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.ProjectNum.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.ProjectNum.label}"
+                       id="c1">
+              <af:inputText value="#{row.bindings.ProjectNum.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.ProjectNum.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.ProjectNum.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.ProjectNum.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.ProjectNum.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.ProjectNum.tooltip}"
+                            id="it3">
+                <f:validator binding="#{row.bindings.ProjectNum.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.TaskNum.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.TaskNum.label}"
+                       id="c10">
+              <af:inputText value="#{row.bindings.TaskNum.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.TaskNum.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.TaskNum.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.TaskNum.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.TaskNum.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.TaskNum.tooltip}"
+                            id="it2">
+                <f:validator binding="#{row.bindings.TaskNum.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.LineType.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.LineType.label}"
+                       id="c15">
+              <af:inputText value="#{row.bindings.LineType.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.LineType.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.LineType.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.LineType.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.LineType.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.LineType.tooltip}"
+                            id="it9">
+                <f:validator binding="#{row.bindings.LineType.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.ItemsNum.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.ItemsNum.label}"
+                       id="c11">
+              <af:inputText value="#{row.bindings.ItemsNum.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.ItemsNum.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.ItemsNum.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.ItemsNum.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.ItemsNum.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.ItemsNum.tooltip}"
+                            id="it4">
+                <f:validator binding="#{row.bindings.ItemsNum.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.RevNo.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.RevNo.label}"
+                       id="c7">
+              <af:inputText value="#{row.bindings.RevNo.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.RevNo.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.RevNo.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.RevNo.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.RevNo.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.RevNo.tooltip}"
+                            id="it11">
+                <f:validator binding="#{row.bindings.RevNo.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoLineExcelUpload_VO1.hints.RevNo.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.Description.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.Description.label}"
+                       id="c12">
+              <af:inputText value="#{row.bindings.Description.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.Description.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.Description.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.Description.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.Description.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.Description.tooltip}"
+                            id="it10">
+                <f:validator binding="#{row.bindings.Description.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.Category.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.Category.label}"
+                       id="c3">
+              <af:inputText value="#{row.bindings.Category.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.Category.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.Category.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.Category.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.Category.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.Category.tooltip}"
+                            id="it5">
+                <f:validator binding="#{row.bindings.Category.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.Uom.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.Uom.label}"
+                       id="c6">
+              <af:inputText value="#{row.bindings.Uom.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.Uom.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.Uom.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.Uom.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.Uom.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.Uom.tooltip}"
+                            id="it15">
+                <f:validator binding="#{row.bindings.Uom.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.Quantity.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.Quantity.label}"
+                       id="c14">
+              <af:inputText value="#{row.bindings.Quantity.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.Quantity.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.Quantity.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.Quantity.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.Quantity.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.Quantity.tooltip}"
+                            id="it6">
+                <f:validator binding="#{row.bindings.Quantity.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoLineExcelUpload_VO1.hints.Quantity.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.UnitPrice.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.UnitPrice.label}"
+                       id="c8">
+              <af:inputText value="#{row.bindings.UnitPrice.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.UnitPrice.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.UnitPrice.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.UnitPrice.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.UnitPrice.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.UnitPrice.tooltip}"
+                            id="it12">
+                <f:validator binding="#{row.bindings.UnitPrice.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoLineExcelUpload_VO1.hints.UnitPrice.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionType.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionType.label}"
+                       id="c9">
+              <af:inputText value="#{row.bindings.ProvisionType.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionType.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionType.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionType.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionType.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionType.tooltip}"
+                            id="it7">
+                <f:validator binding="#{row.bindings.ProvisionType.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionAmount.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionAmount.label}"
+                       id="c2">
+              <af:inputText value="#{row.bindings.ProvisionAmount.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionAmount.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionAmount.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionAmount.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionAmount.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionAmount.tooltip}"
+                            id="it14">
+                <f:validator binding="#{row.bindings.ProvisionAmount.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoLineExcelUpload_VO1.hints.ProvisionAmount.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.RefNo.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.RefNo.label}"
+                       id="c5">
+              <af:inputText value="#{row.bindings.RefNo.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.RefNo.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.RefNo.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.RefNo.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.RefNo.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.RefNo.tooltip}"
+                            id="it13">
+                <f:validator binding="#{row.bindings.RefNo.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoLineExcelUpload_VO1.hints.RefNo.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoLineExcelUpload_VO1.hints.RowID.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoLineExcelUpload_VO1.hints.RowID.label}"
+                       id="c4">
+              <af:inputText value="#{row.bindings.RowID.inputValue}"
+                            label="#{bindings.XxPoLineExcelUpload_VO1.hints.RowID.label}"
+                            required="#{bindings.XxPoLineExcelUpload_VO1.hints.RowID.mandatory}"
+                            columns="#{bindings.XxPoLineExcelUpload_VO1.hints.RowID.displayWidth}"
+                            maximumLength="#{bindings.XxPoLineExcelUpload_VO1.hints.RowID.precision}"
+                            shortDesc="#{bindings.XxPoLineExcelUpload_VO1.hints.RowID.tooltip}"
+                            id="it8">
+                <f:validator binding="#{row.bindings.RowID.validator}"/>
+              </af:inputText>
+            </af:column>
+          </af:table>
+        </af:showDetailItem>
+        <af:showDetailItem id="tab2" text="Ship"
+                           binding="#{backingBeanScope.backing_frag1.tab2}"
+                           styleClass="AFStretchWidth">
+          <af:table value="#{bindings.XxPoSchExcelUpload_VO1.collectionModel}"
+                    var="row"
+                    rows="#{bindings.XxPoSchExcelUpload_VO1.rangeSize}"
+                    emptyText="#{bindings.XxPoSchExcelUpload_VO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.XxPoSchExcelUpload_VO1.rangeSize}"
+                    rowBandingInterval="0"
+                    selectedRowKeys="#{bindings.XxPoSchExcelUpload_VO1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.XxPoSchExcelUpload_VO1.collectionModel.makeCurrent}"
+                    rowSelection="single"
+                    binding="#{backingBeanScope.backing_frag1.t2}" id="t2"
+                    styleClass="AFStretchWidth">
+            <af:column sortProperty="#{bindings.XxPoSchExcelUpload_VO1.hints.LineNumber.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoSchExcelUpload_VO1.hints.LineNumber.label}"
+                       id="c16">
+              <af:inputText value="#{row.bindings.LineNumber.inputValue}"
+                            label="#{bindings.XxPoSchExcelUpload_VO1.hints.LineNumber.label}"
+                            required="#{bindings.XxPoSchExcelUpload_VO1.hints.LineNumber.mandatory}"
+                            columns="#{bindings.XxPoSchExcelUpload_VO1.hints.LineNumber.displayWidth}"
+                            maximumLength="#{bindings.XxPoSchExcelUpload_VO1.hints.LineNumber.precision}"
+                            shortDesc="#{bindings.XxPoSchExcelUpload_VO1.hints.LineNumber.tooltip}"
+                            id="it19">
+                <f:validator binding="#{row.bindings.LineNumber.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoSchExcelUpload_VO1.hints.LineNumber.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipNumber.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipNumber.label}"
+                       id="c25">
+              <af:inputText value="#{row.bindings.ShipNumber.inputValue}"
+                            label="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipNumber.label}"
+                            required="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipNumber.mandatory}"
+                            columns="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipNumber.displayWidth}"
+                            maximumLength="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipNumber.precision}"
+                            shortDesc="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipNumber.tooltip}"
+                            id="it23">
+                <f:validator binding="#{row.bindings.ShipNumber.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipNumber.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipOrg.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipOrg.label}"
+                       id="c17">
+              <af:inputText value="#{row.bindings.ShipOrg.inputValue}"
+                            label="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipOrg.label}"
+                            required="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipOrg.mandatory}"
+                            columns="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipOrg.displayWidth}"
+                            maximumLength="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipOrg.precision}"
+                            shortDesc="#{bindings.XxPoSchExcelUpload_VO1.hints.ShipOrg.tooltip}"
+                            id="it21">
+                <f:validator binding="#{row.bindings.ShipOrg.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoSchExcelUpload_VO1.hints.Quantity.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoSchExcelUpload_VO1.hints.Quantity.label}"
+                       id="c21">
+              <af:inputText value="#{row.bindings.Quantity.inputValue}"
+                            label="#{bindings.XxPoSchExcelUpload_VO1.hints.Quantity.label}"
+                            required="#{bindings.XxPoSchExcelUpload_VO1.hints.Quantity.mandatory}"
+                            columns="#{bindings.XxPoSchExcelUpload_VO1.hints.Quantity.displayWidth}"
+                            maximumLength="#{bindings.XxPoSchExcelUpload_VO1.hints.Quantity.precision}"
+                            shortDesc="#{bindings.XxPoSchExcelUpload_VO1.hints.Quantity.tooltip}"
+                            id="it17">
+                <f:validator binding="#{row.bindings.Quantity.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoSchExcelUpload_VO1.hints.Quantity.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoSchExcelUpload_VO1.hints.Uom.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoSchExcelUpload_VO1.hints.Uom.label}"
+                       id="c22">
+              <af:inputText value="#{row.bindings.Uom.inputValue}"
+                            label="#{bindings.XxPoSchExcelUpload_VO1.hints.Uom.label}"
+                            required="#{bindings.XxPoSchExcelUpload_VO1.hints.Uom.mandatory}"
+                            columns="#{bindings.XxPoSchExcelUpload_VO1.hints.Uom.displayWidth}"
+                            maximumLength="#{bindings.XxPoSchExcelUpload_VO1.hints.Uom.precision}"
+                            shortDesc="#{bindings.XxPoSchExcelUpload_VO1.hints.Uom.tooltip}"
+                            id="it18">
+                <f:validator binding="#{row.bindings.Uom.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoSchExcelUpload_VO1.hints.NeeByDate.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoSchExcelUpload_VO1.hints.NeeByDate.label}"
+                       id="c18">
+              <af:inputDate value="#{row.bindings.NeeByDate.inputValue}"
+                            label="#{bindings.XxPoSchExcelUpload_VO1.hints.NeeByDate.label}"
+                            required="#{bindings.XxPoSchExcelUpload_VO1.hints.NeeByDate.mandatory}"
+                            shortDesc="#{bindings.XxPoSchExcelUpload_VO1.hints.NeeByDate.tooltip}"
+                            id="id1">
+                <f:validator binding="#{row.bindings.NeeByDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.XxPoSchExcelUpload_VO1.hints.NeeByDate.format}"/>
+              </af:inputDate>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoSchExcelUpload_VO1.hints.NoteToSupplier.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoSchExcelUpload_VO1.hints.NoteToSupplier.label}"
+                       id="c20">
+              <af:inputText value="#{row.bindings.NoteToSupplier.inputValue}"
+                            label="#{bindings.XxPoSchExcelUpload_VO1.hints.NoteToSupplier.label}"
+                            required="#{bindings.XxPoSchExcelUpload_VO1.hints.NoteToSupplier.mandatory}"
+                            columns="#{bindings.XxPoSchExcelUpload_VO1.hints.NoteToSupplier.displayWidth}"
+                            maximumLength="#{bindings.XxPoSchExcelUpload_VO1.hints.NoteToSupplier.precision}"
+                            shortDesc="#{bindings.XxPoSchExcelUpload_VO1.hints.NoteToSupplier.tooltip}"
+                            id="it22">
+                <f:validator binding="#{row.bindings.NoteToSupplier.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoSchExcelUpload_VO1.hints.PromisedDate.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoSchExcelUpload_VO1.hints.PromisedDate.label}"
+                       id="c19">
+              <af:inputDate value="#{row.bindings.PromisedDate.inputValue}"
+                            label="#{bindings.XxPoSchExcelUpload_VO1.hints.PromisedDate.label}"
+                            required="#{bindings.XxPoSchExcelUpload_VO1.hints.PromisedDate.mandatory}"
+                            shortDesc="#{bindings.XxPoSchExcelUpload_VO1.hints.PromisedDate.tooltip}"
+                            id="id2">
+                <f:validator binding="#{row.bindings.PromisedDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.XxPoSchExcelUpload_VO1.hints.PromisedDate.format}"/>
+              </af:inputDate>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoSchExcelUpload_VO1.hints.RefNo.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoSchExcelUpload_VO1.hints.RefNo.label}"
+                       id="c23">
+              <af:inputText value="#{row.bindings.RefNo.inputValue}"
+                            label="#{bindings.XxPoSchExcelUpload_VO1.hints.RefNo.label}"
+                            required="#{bindings.XxPoSchExcelUpload_VO1.hints.RefNo.mandatory}"
+                            columns="#{bindings.XxPoSchExcelUpload_VO1.hints.RefNo.displayWidth}"
+                            maximumLength="#{bindings.XxPoSchExcelUpload_VO1.hints.RefNo.precision}"
+                            shortDesc="#{bindings.XxPoSchExcelUpload_VO1.hints.RefNo.tooltip}"
+                            id="it20">
+                <f:validator binding="#{row.bindings.RefNo.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoSchExcelUpload_VO1.hints.RefNo.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoSchExcelUpload_VO1.hints.RowID.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoSchExcelUpload_VO1.hints.RowID.label}"
+                       id="c24">
+              <af:inputText value="#{row.bindings.RowID.inputValue}"
+                            label="#{bindings.XxPoSchExcelUpload_VO1.hints.RowID.label}"
+                            required="#{bindings.XxPoSchExcelUpload_VO1.hints.RowID.mandatory}"
+                            columns="#{bindings.XxPoSchExcelUpload_VO1.hints.RowID.displayWidth}"
+                            maximumLength="#{bindings.XxPoSchExcelUpload_VO1.hints.RowID.precision}"
+                            shortDesc="#{bindings.XxPoSchExcelUpload_VO1.hints.RowID.tooltip}"
+                            id="it16">
+                <f:validator binding="#{row.bindings.RowID.validator}"/>
+              </af:inputText>
+            </af:column>
+          </af:table>
+        </af:showDetailItem>
+        <af:showDetailItem id="tab3" text="Distrubution"
+                           binding="#{backingBeanScope.backing_frag1.tab3}"
+                           styleClass="AFStretchWidth">
+          <af:table value="#{bindings.XxPoDistExcelUpload_VO1.collectionModel}"
+                    var="row"
+                    rows="#{bindings.XxPoDistExcelUpload_VO1.rangeSize}"
+                    emptyText="#{bindings.XxPoDistExcelUpload_VO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.XxPoDistExcelUpload_VO1.rangeSize}"
+                    rowBandingInterval="0"
+                    selectedRowKeys="#{bindings.XxPoDistExcelUpload_VO1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.XxPoDistExcelUpload_VO1.collectionModel.makeCurrent}"
+                    rowSelection="single"
+                    binding="#{backingBeanScope.backing_frag1.t3}" id="t3"
+                    styleClass="AFStretchWidth">
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.LineNumber.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.LineNumber.label}"
+                       id="c36">
+              <af:inputText value="#{row.bindings.LineNumber.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.LineNumber.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.LineNumber.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.LineNumber.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.LineNumber.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.LineNumber.tooltip}"
+                            id="it29">
+                <f:validator binding="#{row.bindings.LineNumber.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoDistExcelUpload_VO1.hints.LineNumber.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.ShipNumber.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.ShipNumber.label}"
+                       id="c27">
+              <af:inputText value="#{row.bindings.ShipNumber.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.ShipNumber.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.ShipNumber.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.ShipNumber.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.ShipNumber.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.ShipNumber.tooltip}"
+                            id="it30">
+                <f:validator binding="#{row.bindings.ShipNumber.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoDistExcelUpload_VO1.hints.ShipNumber.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.DistNumber.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.DistNumber.label}"
+                       id="c31">
+              <af:inputText value="#{row.bindings.DistNumber.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.DistNumber.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.DistNumber.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.DistNumber.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.DistNumber.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.DistNumber.tooltip}"
+                            id="it31">
+                <f:validator binding="#{row.bindings.DistNumber.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoDistExcelUpload_VO1.hints.DistNumber.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.ProjectNum.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.ProjectNum.label}"
+                       id="c29">
+              <af:inputText value="#{row.bindings.ProjectNum.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.ProjectNum.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.ProjectNum.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.ProjectNum.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.ProjectNum.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.ProjectNum.tooltip}"
+                            id="it33">
+                <f:validator binding="#{row.bindings.ProjectNum.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.TaskNum.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.TaskNum.label}"
+                       id="c32">
+              <af:inputText value="#{row.bindings.TaskNum.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.TaskNum.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.TaskNum.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.TaskNum.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.TaskNum.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.TaskNum.tooltip}"
+                            id="it24">
+                <f:validator binding="#{row.bindings.TaskNum.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.CodeComb.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.CodeComb.label}"
+                       id="c35">
+              <af:inputText value="#{row.bindings.CodeComb.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.CodeComb.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.CodeComb.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.CodeComb.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.CodeComb.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.CodeComb.tooltip}"
+                            id="it27">
+                <f:validator binding="#{row.bindings.CodeComb.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.DistQty.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.DistQty.label}"
+                       id="c30">
+              <af:inputText value="#{row.bindings.DistQty.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.DistQty.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.DistQty.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.DistQty.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.DistQty.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.DistQty.tooltip}"
+                            id="it34">
+                <f:validator binding="#{row.bindings.DistQty.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoDistExcelUpload_VO1.hints.DistQty.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureType.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureType.label}"
+                       id="c37">
+              <af:inputText value="#{row.bindings.ExpenditureType.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureType.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureType.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureType.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureType.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureType.tooltip}"
+                            id="it26">
+                <f:validator binding="#{row.bindings.ExpenditureType.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureOrganization.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureOrganization.label}"
+                       id="c26">
+              <af:inputText value="#{row.bindings.ExpenditureOrganization.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureOrganization.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureOrganization.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureOrganization.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureOrganization.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureOrganization.tooltip}"
+                            id="it32">
+                <f:validator binding="#{row.bindings.ExpenditureOrganization.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureDate.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureDate.label}"
+                       id="c33">
+              <af:inputDate value="#{row.bindings.ExpenditureDate.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureDate.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureDate.mandatory}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureDate.tooltip}"
+                            id="id3">
+                <f:validator binding="#{row.bindings.ExpenditureDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.XxPoDistExcelUpload_VO1.hints.ExpenditureDate.format}"/>
+              </af:inputDate>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.RefNo.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.RefNo.label}"
+                       id="c28">
+              <af:inputText value="#{row.bindings.RefNo.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.RefNo.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.RefNo.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.RefNo.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.RefNo.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.RefNo.tooltip}"
+                            id="it28">
+                <f:validator binding="#{row.bindings.RefNo.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.XxPoDistExcelUpload_VO1.hints.RefNo.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.XxPoDistExcelUpload_VO1.hints.RowID.name}"
+                       sortable="false"
+                       headerText="#{bindings.XxPoDistExcelUpload_VO1.hints.RowID.label}"
+                       id="c34">
+              <af:inputText value="#{row.bindings.RowID.inputValue}"
+                            label="#{bindings.XxPoDistExcelUpload_VO1.hints.RowID.label}"
+                            required="#{bindings.XxPoDistExcelUpload_VO1.hints.RowID.mandatory}"
+                            columns="#{bindings.XxPoDistExcelUpload_VO1.hints.RowID.displayWidth}"
+                            maximumLength="#{bindings.XxPoDistExcelUpload_VO1.hints.RowID.precision}"
+                            shortDesc="#{bindings.XxPoDistExcelUpload_VO1.hints.RowID.tooltip}"
+                            id="it25">
+                <f:validator binding="#{row.bindings.RowID.validator}"/>
+              </af:inputText>
+            </af:column>
+          </af:table>
+        </af:showDetailItem>
+      </af:panelTabbed>
+    </f:facet>
+  </af:panelSplitter>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_frag1-->
+</jsp:root>

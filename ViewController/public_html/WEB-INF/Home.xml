@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="Home">
+    <default-activity id="__1">frag1</default-activity>
+    <managed-bean id="__3">
+      <managed-bean-name id="__4">backing_frag1</managed-bean-name>
+      <managed-bean-class id="__5">view.backing.Frag1</managed-bean-class>
+      <managed-bean-scope id="__2">backingBean</managed-bean-scope>
+      <!--oracle-jdev-comment:managed-bean-jsp-link:1frag1.jsff-->
+    </managed-bean>
+    <view id="frag1">
+      <page>/frag1.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
