@@ -56,7 +56,7 @@ public class ADFUtils implements java.io.Serializable {
     public static final ADFLogger LOG = ADFLogger.createADFLogger(ADFUtils.class);
 
     /**
-     * Get data control by name.
+     * Get data control by name Test.
      * @param name data control name
      * @return DCDataControl
      */
